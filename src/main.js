@@ -23,7 +23,7 @@ import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use( Vant );
 
-// import {Button} from 'mint-ui'
+
 import {
     Lazyload
 } from 'vant';
