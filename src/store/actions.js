@@ -10,8 +10,12 @@ import {
     INCREMENT_FOOD_COUNT,
     DECREMENT_FOOD_COUNT,
     CLEAR_CART,
+    RECEIVE_CATEGORYS,
+    RECEIVE_SHOPS 
   } from './mutation-types'
   import {
+    reqFoodCategorys,
+    reqShops,
     reqShopRatings,
     reqShopGoods,
     reqShopInfo,
@@ -30,28 +34,28 @@ export default {
   //       }
   //   }
 
-  //   // 异步获取食品分类列表
-  // async getCategorys({commit}) {
-  //   // 发送异步ajax请求
-  //   const result = await reqFoodCategorys()
-  //   // 提交一个mutation
-  //   if (result.code === 0) {
-  //     const categorys = result.data
-  //     commit(RECEIVE_CATEGORYS, {categorys})
-  //   }
-  // },
+    // 异步获取食品分类列表
+  async getCategorys({commit}) {
+    // 发送异步ajax请求
+    const result = await reqFoodCategorys()
+    console.log('result :', result);
+    // 提交一个mutation
+    if (result.code === 0) {
+      const categorys = result.data
+      commit(RECEIVE_CATEGORYS, {categorys})
+    }
+  },
 
-  // // 异步获取商家列表
-  // async getShops({commit, state}) {
-  //   // 发送异步ajax请求
-  //   const {longitude, latitude} = state
-  //   const result = await reqShops(longitude, latitude)
-  //   // 提交一个mutation
-  //   if (result.code === 0) {
-  //     const shops = result.data
-  //     commit(RECEIVE_SHOPS, {shops})
-  //   }
-  // },
+  // 异步获取商家列表
+  async getShops({commit}) {
+    // 发送异步ajax请求
+    const result = await reqShops()
+    // 提交一个mutation
+    if (result.code === 0) {
+      const shops = result.data
+      commit(RECEIVE_SHOPS, {shops})
+    }
+  },
 
   // 异步获取商家信息
   async getShopInfo({commit}) {

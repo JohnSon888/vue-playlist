@@ -4,6 +4,8 @@
 
  import Mock from 'mockjs'
  import data from './data.json'
+ import banner from './banner.json'
+ import shops from './shops.json'
 
 // 返回goods的接口
 Mock.mock('/goods',{code: 0, data: data.goods})
@@ -11,5 +13,9 @@ Mock.mock('/goods',{code: 0, data: data.goods})
 Mock.mock('/ratings',{code: 0, data: data.ratings})
 // 返回info的接口
 Mock.mock('/info',{code: 0, data: data.info})
+// 返回banner的接口
+Mock.mock('/categorys',{code: 0, data: banner.categorys})
+// 返回商家列表的接口
+Mock.mock('/shops',{code: 0, data: shops.shops})
 
 // export default ???  不需要向外暴露任何数据, 只需要保存能执行即可

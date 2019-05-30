@@ -11,10 +11,7 @@ export const reqAddress = function (geohash) {
     //TODO: 不加return没有返回值
     return  ajax(`${BASE_URL}/position/${geohash}`)
 }
-// 2、获取食品分类列表
-export const reqFoodCategorys = () => ajax(BASE_URL+'/index_category')
-// 3、根据经纬度获取商铺列表
-export const reqShops = (latitude,longitude) => ajax(BASE_URL+'/shops', {longitude, latitude})
+
 // 4、根据经纬度和关键字搜索商铺列表
 export const reqSearchShop = (geohash,keyword) => ajax(BASE_URL+'/search_shops', {geohash, keyword})
 // 5、获取一次性验证码
@@ -30,6 +27,12 @@ export const reqUserInfo = () => ajax(BASE_URL + '/userinfo')
 // 10、用户登出
 export const reqLogout = () => ajax(BASE_URL + '/logout')
 
+
+// 一下为mock接口数据
+// 2、获取食品分类列表
+export const reqFoodCategorys = () => ajax('/categorys')
+// 3、根据经纬度获取商铺列表
+export const reqShops = () => ajax('/shops')
 /**
  * 获取商家信息
  */
